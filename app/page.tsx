@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type RequestItem = {
   id: string;
@@ -14,6 +14,18 @@ export default function Home() {
   const [title, setTitle] = useState("");
   const [client, setClient] = useState("");
   const [memo, setMemo] = useState("");
+
+  useEffect(() => {
+  const savedItems = localStorage.getItem("work-requests");
+
+  if (savedItems) {
+    setItems(JSON.parse(savedItems));
+  }
+}, []);
+
+useEffect(() => {
+  localStorage.setItem("work-requests", JSON.stringify(items));
+}, [items]);
 
   const addItem = () => {
     if (!title || !client) return;
