@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Work Request Manager
 
-## Getting Started
+## 概要
 
-First, run the development server:
+Web制作・Web運用で発生する修正依頼を管理するためのミニダッシュボードです。  
+依頼タイトル、クライアント名、期限、ステータス、優先度、メモを登録し、対応状況を一覧で確認できます。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 作成目的
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Webサイト運用では、文言修正、画像差し替え、リンク修正、WordPress更新、フォーム不具合対応など、小さな依頼が複数発生します。  
+このアプリは、それらの依頼を整理し、対応漏れや優先順位の混乱を防ぐことを目的にしています。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 想定ユーザー
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Web制作者
+- Web運用担当者
+- ディレクター補助
+- 中小企業のWeb担当者
 
-## Learn More
+## 使用技術
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- localStorage
+- Git / GitHub
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 実装済み機能
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 依頼タイトルの登録
+- クライアント名の登録
+- メモの登録
+- 依頼一覧の表示
+- 依頼の削除
+- localStorageによるデータ保存
 
-## Deploy on Vercel
+## 次に実装する機能
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 期限の登録
+- ステータスの登録
+  - 未着手
+  - 対応中
+  - 確認待ち
+  - 完了
+- 優先度の登録
+  - 高
+  - 中
+  - 低
+- 優先度順の並び替え
+- 期限順の並び替え
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 将来的に追加したい機能
+
+- 期限・影響範囲・緊急性・作業量による優先度スコア算出
+- ステータスによる絞り込み
+- 完了済み依頼の非表示
+- 依頼内容から確認事項を整理する機能
+
+## このアプリで意識したこと
+
+単に依頼を記録するだけでなく、Web運用の現場で必要になる「対応順の判断」「進捗の見える化」「確認待ちの管理」を意識して設計しています。
